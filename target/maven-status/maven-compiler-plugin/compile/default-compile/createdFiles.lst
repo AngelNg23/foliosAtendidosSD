@@ -1,0 +1,17 @@
+com\telcel\dashboard\repository\FoliosSDRepository.class
+com\telcel\dashboard\repositoryImpl\FoliosSDRepositoryImpl.class
+com\telcel\dashboard\config\JpaConfiguration.class
+com\telcel\dashboard\config\MvcWebConfig.class
+com\telcel\dashboard\serviceImpl\GenericReportingService.class
+com\telcel\dashboard\entity\Puesto.class
+com\telcel\dashboard\service\FoliosSDService.class
+com\telcel\dashboard\config\JdbcConfig.class
+com\telcel\dashboard\controller\ViewScopeController.class
+com\telcel\dashboard\config\MvcWebApplicationInitializer.class
+com\telcel\dashboard\serviceImpl\FoliosSDServiceImpl.class
+com\telcel\dashboard\config\SpringCoreConfig.class
+com\telcel\dashboard\controller\DashboardController.class
+com\telcel\dashboard\excel\FoliosSDExcelExporter.class
+com\telcel\dashboard\config\WebAppInitializer.class
+com\telcel\dashboard\entity\FoliosAtendidosSD.class
+com\telcel\dashboard\entity\FoliosSD.class

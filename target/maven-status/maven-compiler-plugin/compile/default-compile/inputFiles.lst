@@ -1,0 +1,17 @@
+C:\Users\Angel\Documents\NetBeansProjects\ReporteFoliosSD\src\main\java\com\telcel\dashboard\controller\ViewScopeController.java
+C:\Users\Angel\Documents\NetBeansProjects\ReporteFoliosSD\src\main\java\com\telcel\dashboard\config\MvcWebApplicationInitializer.java
+C:\Users\Angel\Documents\NetBeansProjects\ReporteFoliosSD\src\main\java\com\telcel\dashboard\repository\FoliosSDRepository.java
+C:\Users\Angel\Documents\NetBeansProjects\ReporteFoliosSD\src\main\java\com\telcel\dashboard\config\SpringCoreConfig.java
+C:\Users\Angel\Documents\NetBeansProjects\ReporteFoliosSD\src\main\java\com\telcel\dashboard\controller\DashboardController.java
+C:\Users\Angel\Documents\NetBeansProjects\ReporteFoliosSD\src\main\java\com\telcel\dashboard\entity\FoliosAtendidosSD.java
+C:\Users\Angel\Documents\NetBeansProjects\ReporteFoliosSD\src\main\java\com\telcel\dashboard\entity\FoliosSD.java
+C:\Users\Angel\Documents\NetBeansProjects\ReporteFoliosSD\src\main\java\com\telcel\dashboard\serviceImpl\FoliosSDServiceImpl.java
+C:\Users\Angel\Documents\NetBeansProjects\ReporteFoliosSD\src\main\java\com\telcel\dashboard\repositoryImpl\FoliosSDRepositoryImpl.java
+C:\Users\Angel\Documents\NetBeansProjects\ReporteFoliosSD\src\main\java\com\telcel\dashboard\config\JdbcConfig.java
+C:\Users\Angel\Documents\NetBeansProjects\ReporteFoliosSD\src\main\java\com\telcel\dashboard\config\MvcWebConfig.java
+C:\Users\Angel\Documents\NetBeansProjects\ReporteFoliosSD\src\main\java\com\telcel\dashboard\entity\Puesto.java
+C:\Users\Angel\Documents\NetBeansProjects\ReporteFoliosSD\src\main\java\com\telcel\dashboard\excel\FoliosSDExcelExporter.java
+C:\Users\Angel\Documents\NetBeansProjects\ReporteFoliosSD\src\main\java\com\telcel\dashboard\serviceImpl\GenericReportingService.java
+C:\Users\Angel\Documents\NetBeansProjects\ReporteFoliosSD\src\main\java\com\telcel\dashboard\service\FoliosSDService.java
+C:\Users\Angel\Documents\NetBeansProjects\ReporteFoliosSD\src\main\java\com\telcel\dashboard\config\WebAppInitializer.java
+C:\Users\Angel\Documents\NetBeansProjects\ReporteFoliosSD\src\main\java\com\telcel\dashboard\config\JpaConfiguration.java

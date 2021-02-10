@@ -1,0 +1,23 @@
+
+table th , table td{
+    text-align: center;
+}
+
+table tr:nth-child(even){
+    background-color: #9ED6FF
+}
+
+.pagination li:hover{
+    cursor: pointer;
+}
+table tbody tr {
+    display: none;
+}
+table {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.buscador{
+    margin-top: 20px;
+}

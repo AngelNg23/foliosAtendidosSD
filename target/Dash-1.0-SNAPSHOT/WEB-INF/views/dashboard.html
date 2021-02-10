@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head th:replace="/templates/layout/plantilla :: head">
+        <title>Inicio</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light static-top"
+             style="background-color: #FFFFFF;">
+            <div class="container">
+                <a class="navbar-brand" href="#"> 
+                    <img
+                        th:src="@{/resources/img/logoTelcel.png}" alt="No disponible" width="120px"
+                        height="30px">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- 			<div class="collapse navbar-collapse" id="navbarResponsive"> -->
+                <!-- 				<ul class="navbar-nav ml-auto"> -->
+                <!-- 					<li class="nav-item active"><a class="nav-link" href="#">Home -->
+                <!-- 							<span class="sr-only">(current)</span> -->
+                <!-- 					</a></li> -->
+                <!-- 					<li class="nav-item"><a class="nav-link" href="#">About</a></li> -->
+                <!-- 					<li class="nav-item"><a class="nav-link" href="#">Services</a> -->
+                <!-- 					</li> -->
+                <!-- 					<li class="nav-item"><a class="nav-link" href="#">Contact</a> -->
+                <!-- 					</li> -->
+                <!-- 				</ul> -->
+                <!-- 			</div> -->
+            </div>
+        </nav>
+        <center>
+
+            <h3>Reporte de Folios Atendidos de SD</h3>
+            <br>
+        </center>
+        <div class="container">
+            <form action="#" th:action="@{/download}"  method="post">
+                <div class="form-group row">
+<!--                    <label for="example-date-input" class="col-2 col-form-label">Fecha Inicial</label>
+                    <div class="col-3">
+                        <input class="form-control" type="date" id="fechaInicial" >
+                    </div>-->
+                    <label for="example-date-input" class="col-2 col-form-label">*Fecha Final:</label>
+                    <div class="col-7">
+                        <input class="form-control" type="date" id="fechaFinal" name="fechaFinal" required="true" >
+                    </div>
+                    <br>
+                        <div class="col-3"><button type="submit" class="btn btn-success">Generar</button></div>
+                </div>
+            </form>
+        </div>
+        </div>
+        <script>
+            document.getElementById('fechaFinal').max = new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString().split("T")[0];
+        </script>
+
+        <style>
+
+        </style>
+</html>
