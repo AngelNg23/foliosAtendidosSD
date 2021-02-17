@@ -17,6 +17,11 @@ import com.telcel.dashboard.service.FoliosSDService;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletOutputStream;
@@ -39,17 +44,22 @@ public class FoliosSDServiceImpl extends GenericReportingService implements Foli
     }
 
     @Override
-    public void getDetalleXLSX(HttpServletResponse response, String fechaFin) throws IOException{
+    public void getDetalleXLSX(HttpServletResponse response, String fechaFin) throws IOException {
         try {
             InputStream is = new ClassPathResource("templates/excelPrueba.xlsx")
-		.getInputStream();
+                    .getInputStream();
             ServletOutputStream outputStream = response.getOutputStream();
             List<FoliosSD> foliosList = ttRepo.findAllFoliosAttended(fechaFin);
+            
             Context context = new Context();
             context.putVar("foliosList", foliosList);
             JxlsHelper.getInstance().processTemplateAtCell(is, outputStream, context, "Result!A1");
-            if(is != null)is.close();
-            if(outputStream != null)is.close();
+            if (is != null) {
+                is.close();
+            }
+            if (outputStream != null) {
+                is.close();
+            }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(FoliosSDServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
         }

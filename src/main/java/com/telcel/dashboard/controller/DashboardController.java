@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.telcel.dashboard.service.FoliosSDService;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -49,8 +50,26 @@ public class DashboardController {
         DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
         String currentDateTime = dateFormatter.format(new Date());
         String headerKey = "Content-Disposition";
-        String headerValue = "attachment; filename=reporteSDAtendidos_del: "+ fechaFinal +" al: " + currentDateTime + ".xlsx";
+        String headerValue = "attachment; filename=reporteSDAtendidos_del: " + fechaFinal + " al: " + currentDateTime + ".xlsx";
         response.setHeader(headerKey, headerValue);
-        foliosSDService.getDetalleXLSX(response, fechaFinal); 
+        foliosSDService.getDetalleXLSX(response, fechaFinal);
+    }
+
+    @RequestMapping(path = "/pruebas")
+    @ResponseBody
+    public void descargaExcel1() {
+        Calendar fecha = Calendar.getInstance();
+//        int anio = fecha.get(Calendar.YEAR);
+//        int mes = fecha.get(Calendar.MONTH) + 1;
+//        System.out.println("MES ACTUAL: " + mes + " Año actual: " + anio);
+//        fecha.add(Calendar.MONTH, -2);
+//        int anioMenos = fecha.get(Calendar.YEAR);
+//        int mesMenos = fecha.get(Calendar.MONTH) + 1;
+//        System.out.println("MES ACTUAL: " + mesMenos + " Año actual: " + anioMenos);
+        for (int i = 0; i < 3; i++) {
+            int mesMenos1 = fecha.get(Calendar.MONTH) + 1;
+            System.out.println("MES: " +mesMenos1);
+            fecha.add(Calendar.MONTH, -1);
+        }
     }
 }
