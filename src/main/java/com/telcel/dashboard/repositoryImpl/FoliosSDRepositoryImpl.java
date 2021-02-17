@@ -25,18 +25,19 @@ public class FoliosSDRepositoryImpl implements FoliosSDRepository {
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
     @Override
-    public List<FoliosSD> findAllFoliosAttended(String fechaFin) {      
+    public List<FoliosSD> findAllFoliosAttended(String fechaFin) {   
+        
         String query = "SELECT CR.REF_NUM AS NO_INCIDENTE, \n" +
 "          cast(CR.DESCRIPTION as VARCHAR(4000)) AS DESCRIPCION,\n" +
 "       CRSTAT.SYM AS ESTATUS, \n" +
 "       dateadd( ss,CR.OPEN_DATE ,convert( datetime,'12/31/1969 18:00:00',102 ))  AS FECHA_HORA_CREACION,\n" +
-"       dateadd( ss,max(LOG.LAST_MOD_DT), convert( datetime,'12/31/1969 18:00:00',102 ))  AS FECHA_ATENCION, \n" +
+"       dateadd( ss,max(LOG.LAST_MOD_DT), convert( datetime,'12/31/1969 18:00:00',102 ))  AS FECHA_HORA_ATENCION, \n" +
 "       [LOG_ANALISTA].[FIRST_NAME]+' '+[LOG_ANALISTA].[LAST_NAME] AS ASIGNADO, \n" +
 "       CATEG.SYM AS CATEGORIA, \n" +
 "       CA_OWNED_RESOURCE.RESOURCE_NAME AS CI_RELACIONADO, \n" +
-"       ZA.SYM AS MOTIVO_DE_INCI, \n" +
+"       ZA.SYM AS MOTIVO_INCIDENTE, \n" +
 "       GRP.LAST_NAME AS GRUPO,\n" +
-"       cast(log.DESCRIPTION as VARCHAR(4000)) as log_solution     \n" +
+"       cast(log.DESCRIPTION as VARCHAR(4000)) as LOG_SOLUTION     \n" +
 "                FROM CALL_REQ AS CR \n" +
 "                LEFT JOIN CR_STAT AS CRSTAT ON CR.STATUS = CRSTAT.CODE \n" +
 "                LEFT JOIN CA_CONTACT AS ASSIG ON (CR.ASSIGNEE = ASSIG.CONTACT_UUID AND ASSIG.LAST_NAME IS NOT NULL) \n" +
@@ -60,6 +61,8 @@ public class FoliosSDRepositoryImpl implements FoliosSDRepository {
 "                           cast(CR.DESCRIPTION as VARCHAR(4000)),\n" +
 "                           cast(log.DESCRIPTION as VARCHAR(4000))\n" +
 "                           ORDER by  LOG.LAST_MOD_DT desc";
+        
+        
         List<FoliosSD> ttSinAtencion = namedParameterJdbcTemplate.query(query.toString(),
                 new BeanPropertyRowMapper(FoliosSD.class));
         return ttSinAtencion;
