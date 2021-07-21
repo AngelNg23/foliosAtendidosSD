@@ -52,8 +52,8 @@ public class FoliosSDRepositoryImpl implements FoliosSDRepository {
 "                LEFT JOIN CA_CONTACT AS LOG_ANALISTA  ON (LOG_ANALISTA.CONTACT_UUID = LOG.analyst )\n" +
 "                WHERE \n" +
 "                 GRP.LAST_NAME  IN ('Soporte a Usuarios y Ctrl de la Producción TT ') \n" +
-"                 AND LOG_ANALISTA.FIRST_NAME IS NOT NULL\n" +
-"                  AND LOG_ANALISTA.LAST_NAME IS NOT NULL\n" +
+"                 AND LOG_ANALISTA.FIRST_NAME IS NOT NULL \n" +
+"                  AND LOG_ANALISTA.LAST_NAME IS NOT NULL \n" +
 "                AND LOG.TYPE IN('SOLN', 'RE', 'ST')\n" +
 "                 AND (DATEADD(SS, CR.OPEN_DATE, CONVERT(DATETIME, '1969-12-31 18:00:00', 102)) > '"+ fechaFin +" 00:00:0' )  \n" +
 "                  GROUP BY  CR.REF_NUM ,  CRSTAT.SYM, CR.OPEN_DATE, [LOG_ANALISTA].[FIRST_NAME]+' '+[LOG_ANALISTA].[LAST_NAME], CATEG.SYM,\n" +
